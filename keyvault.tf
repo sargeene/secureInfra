@@ -11,7 +11,7 @@ resource "azurerm_key_vault" "this_keyvault" {
     bypass                     = "AzureServices"
     ip_rules                   = ["82.6.69.66"]#this is my system IP
     virtual_network_subnet_ids = []
-    # [] denies all ip except the ip ststed ib the ip rule
+    # [] denies all ip except the ip stated ib the ip rule
   }
 }
 

@@ -74,4 +74,95 @@ variable "flexible_db_username" {
   type        = string
   default     = "psqladmin"
 }
+variable "db_subnet" {
+    description = "database subnet"
+    type = string
+    default = "db-subnet"
+}
+variable "kv_subnet" {
+    description = "database subnet"
+    type = string
+    default = "db-subnet"
+}
+variable "db_private_endpoint" {
+    description = "db private endpoint"
+    type = string
+    default = "db-private-endpoint"
+}
+variable "db_private_service_connection" {
+    description = "db private service connection"
+    type = string
+    default = "db-private-service-connection"
+}
+variable "db_private_dns_zone_group" {
+    description = "db private service connection"
+    type = string
+    default = "db-private-dns-zone-group"
+}
+variable "db_private_dns_zone" {
+    description = "db private dns zone"
+    type = string
+    default = "db-private-dns-zone"
+}
+variable "db_private_dns_virtual_network_link" {
+    description = "db private dns virtual network link"
+    type = string
+    default = "db-private-virtual-network-link"
+}
+variable "kv_subnet" {
+    description = "key vault subnet"
+    type = string
+    default = "kv-subnet"
+}
+variable "kv_private_endpoint" {
+    description = "kv private endpoint"
+    type = string
+    default = "kv-private-endpoint"
+}
+variable "kv_private_service_connection" {
+    description = "kv private service connection"
+    type = string
+    default = "kv-private-service-connection"
+}
+variable "kv_private_dns_zone_group" {
+    description = "kv private dns zone group"
+    type = string
+    default = "kv-private-dns-zone-group"
+}
+variable "kv_private_dns_zone" {
+    description = "kv private dns zone"
+    type = string
+    default = "privatelink.vaultcore.azure.net"
+}
+variable "kv_private_dns_zone_virtual_network_link" {
+    description = "kv private dns zone virtual network link"
+    type = string
+    default = "kv-private-dns-zone-virtual-network-link"
+}
+variable "db_nsg" {
+    description = "database nsg"
+    type = string
+    default = "db-nsg"
+}
+variable "db_ns_rule" {
+    description = "database ns rule"
+    type = string
+    default = "db-ns-rule"
+}
+variable "vm_nsg" {
+    description = "virtual machine nsg"
+    type = string
+    default = "vm-nsg"
+}
+variable "vm_inbound_ns_rule" {
+    description = "virtual machine inbound ns rule"
+    type = string
+    default = "vm-inbound-ns-rule"
+}
+variable "vm_outbound_ns_rule" {
+    description = "virtual machine outbound ns rule"
+    type = string
+    default = "vm-outbound-ns-rule"
+}
+
 
