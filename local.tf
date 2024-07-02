@@ -1,8 +1,8 @@
-locals{
-    environment = var.environment
-    owner = var.owner
+locals {
+  environment = var.environment
+  owner       = var.owner
 
- tags = {
+  tags = {
     Environment = "secure"
     Project     = "solar"
   }

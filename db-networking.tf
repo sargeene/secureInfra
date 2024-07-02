@@ -16,7 +16,7 @@ resource "azurerm_private_endpoint" "this_db_private_endpoint" {
     private_connection_resource_id = azurerm_mysql_flexible_server.this_mysql_flexible_server.id
     subresource_names              = ["mysqlServer"]
     # This subresource_names is constant for database
-    is_manual_connection           = false
+    is_manual_connection = false
   }
 
   private_dns_zone_group {
@@ -26,7 +26,7 @@ resource "azurerm_private_endpoint" "this_db_private_endpoint" {
 }
 
 resource "azurerm_private_dns_zone" "this_db_private_dns_zone" {
-  name                = var.db_private_dns_zone
+  name = var.db_private_dns_zone
   # This name is constant for database
   resource_group_name = azurerm_resource_group.this_rg.name
 }
