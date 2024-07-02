@@ -10,7 +10,7 @@ resource "azurerm_mysql_flexible_server" "this_mysql_flexible_server" {
   sku_name            = "GP_Standard_D2ds_v4"
   identity {
     type         = "UserAssigned"
-    identity_ids = [azurerm_user_assigned_identity.this_manageidentity.id]
+    identity_ids = [azurerm_user_assigned_identity.this_managedidentity.id]
   }
 
   depends_on = [azurerm_private_dns_zone_virtual_network_link.this_db_private_dns_virtual_network_link]

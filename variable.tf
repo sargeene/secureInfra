@@ -7,7 +7,7 @@ variable "environment" {
 variable "owner" {
   description = "solar-owner"
   type        = string
-  default     = "rasheed"
+  default     = "ray"
 }
 variable "rg_name" {
   description = "value"
@@ -37,13 +37,13 @@ variable "network_nic" {
 variable "win_vm_name" {
   description = "windows vm name"
   type        = string
-  default     = "winvm"
+  default     = "vm"
 }
-variable "win_vm_username" {
+/* variable "win_vm_username" {
   description = "windows vm username"
   type        = string
   default     = "winvm-username"
-}
+} */
 variable "key_vault" {
   description = "keyvault name"
   type        = string

@@ -40,15 +40,15 @@ resource "azurerm_key_vault_access_policy" "this_rasheed_access_policy" {
   secret_permissions = [
     "Set",
     "Get",
-    "list",
     "Delete",
+    "List"
   ]
 }
 
 resource "azurerm_key_vault_access_policy" "this_user_assigned_identity" {
   key_vault_id = azurerm_key_vault.this_keyvault.id
   tenant_id    = data.azurerm_client_config.current.tenant_id
-  object_id    = data.azuread_service_principal.this_manageidentity.principal_id
+  object_id    = azurerm_user_assigned_identity.this_managedidentity.principal_id
 
   secret_permissions = [
     "Get"
