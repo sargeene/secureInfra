@@ -3,6 +3,7 @@ resource "azurerm_subnet" "this_db_subnet" {
   resource_group_name  = azurerm_resource_group.this_rg.name
   virtual_network_name = azurerm_virtual_network.this_vnet.name
   address_prefixes     = ["10.0.3.0/24"]
+  depends_on           = [azurerm_virtual_network.this_vnet]
 }
 
 resource "azurerm_private_endpoint" "this_db_private_endpoint" {
@@ -15,7 +16,7 @@ resource "azurerm_private_endpoint" "this_db_private_endpoint" {
     name                           = var.db_private_service_connection
     private_connection_resource_id = azurerm_mysql_flexible_server.this_mysql_flexible_server.id
     subresource_names              = ["mysqlServer"]
-    # This subresource_names is constant for database
+    # This subresource_names = ["mysqlServer"] is a constant for database
     is_manual_connection = false
   }
 
@@ -26,8 +27,7 @@ resource "azurerm_private_endpoint" "this_db_private_endpoint" {
 }
 
 resource "azurerm_private_dns_zone" "this_db_private_dns_zone" {
-  name = var.db_private_dns_zone
-  # This name is constant for database
+  name                = var.db_private_dns_zone
   resource_group_name = azurerm_resource_group.this_rg.name
 }
 

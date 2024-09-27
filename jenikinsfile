@@ -6,7 +6,7 @@ pipeline {
     environment {
         // Define environment variables if needed
         //TF_VERSION = '3.99.0' // Example: Set your Terraform version
-        TERRAFORM_REPO = 'https://github.com/franklynandco/Infra-Project'
+        TERRAFORM_REPO = 'https://github.com/sargeene/securetest'
     }
 
     stages {

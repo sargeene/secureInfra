@@ -59,11 +59,6 @@ variable "flexible_server_secret" {
   type        = string
   default     = "msql-flexible-server-secret"
 }
-variable "this_flexible_database" {
-  description = "flexible database name"
-  type        = string
-  default     = "flexible-database"
-}
 variable "this_mysql_fs" {
   description = "mysql flexible server name"
   type        = string
@@ -74,6 +69,12 @@ variable "flexible_db_username" {
   type        = string
   default     = "psqladmin"
 }
+variable "this_flexible_database" {
+  description = "mysql flexible server database name"
+  type        = string
+  default     = "this-mysql-flexible-database"
+}
+
 variable "db_subnet" {
   description = "database subnet"
   type        = string
@@ -97,7 +98,7 @@ variable "db_private_dns_zone_group" {
 variable "db_private_dns_zone" {
   description = "db private dns zone"
   type        = string
-  default     = "db-private-dns-zone"
+  default     = "privatelink.mysql.database.azure.com"
 }
 variable "db_private_dns_virtual_network_link" {
   description = "db private dns virtual network link"

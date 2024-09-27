@@ -15,7 +15,7 @@ resource "azurerm_private_endpoint" "this_kv_private_endpoint" {
     name                           = var.kv_private_service_connection
     private_connection_resource_id = azurerm_key_vault.this_keyvault.id
     subresource_names              = ["vault"]
-    # This subresource_names is constant for keyvault
+    # This subresource_names = ["vault"] is a constant for keyvault
     is_manual_connection = false
   }
 
@@ -26,8 +26,7 @@ resource "azurerm_private_endpoint" "this_kv_private_endpoint" {
 }
 
 resource "azurerm_private_dns_zone" "this_kv_private_dns_zone" {
-  name = var.kv_private_dns_zone
-  # This name is constant for keyvault
+  name                = var.kv_private_dns_zone
   resource_group_name = azurerm_resource_group.this_rg.name
 }
 

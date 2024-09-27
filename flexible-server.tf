@@ -16,8 +16,8 @@ resource "azurerm_mysql_flexible_server" "this_mysql_flexible_server" {
   depends_on = [azurerm_private_dns_zone_virtual_network_link.this_db_private_dns_virtual_network_link]
 }
 
-resource "azurerm_mysql_flexible_database" "example" {
-  name                = "exampledb"
+resource "azurerm_mysql_flexible_database" "this_mysql_flexible_database" {
+  name                = "${local.owner}-${var.this_flexible_database}-${local.environment}"
   resource_group_name = azurerm_resource_group.this_rg.name
   server_name         = azurerm_mysql_flexible_server.this_mysql_flexible_server.name
   charset             = "utf8"

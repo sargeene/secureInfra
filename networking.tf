@@ -21,5 +21,7 @@ resource "azurerm_network_interface" "this_nic" {
     name                          = "internal"
     subnet_id                     = azurerm_subnet.this_subnet.id
     private_ip_address_allocation = "Dynamic"
+    private_ip_address            = "10.0.2.9"
+    #The first 1-4 Ip address are reserved so start from 10.0.11.5 and above 5. i.e 10.0.11.6, 10.0.11.7 and all 
   }
 }

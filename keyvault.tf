@@ -9,7 +9,7 @@ resource "azurerm_key_vault" "this_keyvault" {
   network_acls {
     default_action             = "Deny"
     bypass                     = "AzureServices"
-    ip_rules                   = ["82.6.69.66"] #this is my system IP
+    ip_rules                   = ["82.6.69.66"] #system IP
     virtual_network_subnet_ids = []
     # [] denies all ip except the ip stated ib the ip rule
   }
@@ -63,5 +63,4 @@ resource "azurerm_key_vault_secret" "this_felxible_Server_secret" {
   name         = "${local.owner}-${var.flexible_server_secret}-${local.environment}"
   value        = random_password.this_password.result
   key_vault_id = azurerm_key_vault.this_keyvault.id
-
 }
